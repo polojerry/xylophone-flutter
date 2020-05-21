@@ -1,15 +1,23 @@
-import 'package:english_words/english_words.dart';
+import 'package:audioplayers/audio_cache.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(XylophoneApp());
 
 class XylophoneApp extends StatelessWidget {
+  final audioPlayer = AudioCache();
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
         body: SafeArea(
-          child: Center(child: Text(nouns.last)),
+          child: Center(
+            child: FlatButton(
+              child: Text('Click Me'),
+              onPressed: () {
+                audioPlayer.play("note1.wav");
+              },
+            ),
+          ),
         ),
       ),
     );
