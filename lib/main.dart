@@ -4,18 +4,69 @@ import 'package:flutter/material.dart';
 void main() => runApp(XylophoneApp());
 
 class XylophoneApp extends StatelessWidget {
-  final audioPlayer = AudioCache();
+  void playSound(int soundNumber) {
+    final audioPlayer = AudioCache();
+    audioPlayer.play('note$soundNumber.wav');
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
         body: SafeArea(
           child: Center(
-            child: FlatButton(
-              child: Text('Click Me'),
-              onPressed: () {
-                audioPlayer.play("note1.wav");
-              },
+            child: Column(
+              children: <Widget>[
+                FlatButton(
+                  onPressed: () {
+                    playSound(1);
+                  },
+                  color: Colors.red,
+                  child: Text(''),
+                ),
+                FlatButton(
+                  onPressed: () {
+                    playSound(2);
+                  },
+                  color: Colors.orange,
+                  child: Text(''),
+                ),
+                FlatButton(
+                  onPressed: () {
+                    playSound(3);
+                  },
+                  color: Colors.yellow,
+                  child: Text(''),
+                ),
+                FlatButton(
+                  onPressed: () {
+                    playSound(4);
+                  },
+                  color: Colors.green,
+                  child: Text(''),
+                ),
+                FlatButton(
+                  onPressed: () {
+                    playSound(5);
+                  },
+                  color: Colors.blue,
+                  child: Text(''),
+                ),
+                FlatButton(
+                  onPressed: () {
+                    playSound(6);
+                  },
+                  color: Colors.indigo,
+                  child: Text(''),
+                ),
+                FlatButton(
+                  onPressed: () {
+                    playSound(7);
+                  },
+                  color: Colors.red,
+                  child: Text(''),
+                ),
+              ],
             ),
           ),
         ),
